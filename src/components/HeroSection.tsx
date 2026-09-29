@@ -48,11 +48,11 @@ export const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-screen h-screen overflow-hidden bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black cursor-none">
+    <section className="relative w-screen h-screen overflow-hidden bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black cursor-none">
       {/* ================= 1. MINIMAL CUSTOM CURSOR ================= */}
       {cursorPos.x >= 0 && (
         <motion.div
-          className="fixed top-0 left-0 pointer-events-none z-50 rounded-full border border-[#D4AF37]/40 flex items-center justify-center backdrop-blur-[1px]"
+          className="fixed top-0 left-0 pointer-events-none z-50 rounded-full border border-[#10B981]/40 flex items-center justify-center backdrop-blur-[1px]"
           animate={{
             x: cursorPos.x - (isHovered ? 24 : 5),
             y: cursorPos.y - (isHovered ? 24 : 5),
@@ -115,7 +115,7 @@ export const HeroSection: React.FC = () => {
             href="#"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase text-[#EAD8C7] hover:opacity-75 transition-opacity"
+            className="text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase text-[#D1FAE5] hover:opacity-75 transition-opacity"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             ADITH.
@@ -123,7 +123,7 @@ export const HeroSection: React.FC = () => {
 
           {/* Navigation Links */}
           <nav
-            className="hidden md:flex items-center space-x-8 lg:space-x-10 text-[11px] tracking-[0.28em] font-light uppercase text-[#C4B5A5] absolute left-1/2 -translate-x-1/2"
+            className="hidden md:flex items-center space-x-8 lg:space-x-10 text-[11px] tracking-[0.28em] font-light uppercase text-[#7DA88A] absolute left-1/2 -translate-x-1/2"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             {navItems.map((item) => (
@@ -132,10 +132,10 @@ export const HeroSection: React.FC = () => {
                 href={item.href}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                className="relative group py-1 transition-colors duration-300 hover:text-[#FFF5EB]"
+                className="relative group py-1 transition-colors duration-300 hover:text-[#ECFDF5]"
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#D4AF37]/50 transition-all duration-300 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#10B981]/50 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </nav>
@@ -145,7 +145,7 @@ export const HeroSection: React.FC = () => {
             href="#contact"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="group flex items-center space-x-2 text-[11px] tracking-[0.24em] font-light uppercase py-2 px-4 border border-[#8C6D4F]/50 hover:border-[#D4AF37] text-[#EAD8C7] transition-all duration-300 backdrop-blur-sm ml-auto md:ml-0"
+            className="group flex items-center space-x-2 text-[11px] tracking-[0.24em] font-light uppercase py-2 px-4 border border-[#1E3A2F]/50 hover:border-[#10B981] text-[#D1FAE5] transition-all duration-300 backdrop-blur-sm ml-auto md:ml-0"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             <span>LET&apos;S TALK</span>
@@ -172,17 +172,17 @@ export const HeroSection: React.FC = () => {
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
                 {/* Line 1: I AUTOMATE */}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#7DA88A] to-[#1E3A2F] drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
                   I AUTOMATE
                 </span>
 
                 {/* Line 2: BUSINESS */}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#A7F3D0] via-[#34D399] to-[#064E3B] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
                   BUSINESS
                 </span>
 
                 {/* Line 3: WORKFLOWS */}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#DFBE8A] via-[#9B7640] to-[#342410] drop-shadow-[0_10px_30px_rgba(155,118,64,0.4)]">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#6EE7B7] via-[#047857] to-[#022C22] drop-shadow-[0_10px_30px_rgba(155,118,64,0.4)]">
                   WORKFLOWS
                 </span>
               </h1>
@@ -191,17 +191,17 @@ export const HeroSection: React.FC = () => {
             {/* Subtitle Technologies */}
             <motion.div variants={fadeUpVariants} className="mb-4">
               <p
-                className="text-[10px] sm:text-[11px] md:text-xs font-normal tracking-[0.28em] uppercase text-[#C4B29E]"
+                className="text-[10px] sm:text-[11px] md:text-xs font-normal tracking-[0.28em] uppercase text-[#7DA88A]"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                AUTOMATION ANALYST <span className="text-[#8C6D4F] mx-1">•</span> PYTHON DEVELOPER <span className="text-[#8C6D4F] mx-1">•</span> PROCESS ENGINEER
+                AUTOMATION ANALYST <span className="text-[#1E3A2F] mx-1">•</span> PYTHON DEVELOPER <span className="text-[#1E3A2F] mx-1">•</span> PROCESS ENGINEER
               </p>
             </motion.div>
 
             {/* 3-Line Description */}
             <motion.div
               variants={fadeUpVariants}
-              className="text-xs sm:text-sm md:text-[13.5px] font-light text-[#A8988B] leading-[1.8] tracking-wide max-w-lg mb-6 space-y-1"
+              className="text-xs sm:text-sm md:text-[13.5px] font-light text-[#5B7C65] leading-[1.8] tracking-wide max-w-lg mb-6 space-y-1"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <p>
@@ -223,9 +223,9 @@ export const HeroSection: React.FC = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center space-x-3 px-6 sm:px-7 py-3.5 border border-[#8C6D4F] bg-[#120F0C]/80 hover:border-[#D4AF37] text-[#EAD8C7] hover:text-[#FFF5EB] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.18)]"
+                className="relative inline-flex items-center space-x-3 px-6 sm:px-7 py-3.5 border border-[#1E3A2F] bg-[#0A1F14]/80 hover:border-[#10B981] text-[#D1FAE5] hover:text-[#ECFDF5] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.18)]"
               >
-                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#E8D7C5]/40 to-transparent pointer-events-none" />
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#A7F3D0]/40 to-transparent pointer-events-none" />
                 <span>EXPLORE MY WORK</span>
                 <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-xs">
                   ↗
@@ -240,7 +240,7 @@ export const HeroSection: React.FC = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center space-x-2 px-6 sm:px-7 py-3.5 border border-[#8C6D4F]/40 hover:border-[#8C6D4F] text-[#BFA895] hover:text-[#EAD8C7] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300"
+                className="relative inline-flex items-center space-x-2 px-6 sm:px-7 py-3.5 border border-[#1E3A2F]/40 hover:border-[#1E3A2F] text-[#5B7C65] hover:text-[#D1FAE5] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300"
               >
                 <span>DOWNLOAD RESUME</span>
                 <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-xs">
@@ -258,13 +258,13 @@ export const HeroSection: React.FC = () => {
             className="hidden lg:flex flex-col items-start pointer-events-auto pr-24 xl:pr-36 mr-4 z-20 select-none"
           >
             {/* 1. Quote Mark */}
-            <span className="text-xl text-[#C99E5D] leading-none font-serif mb-2">
+            <span className="text-xl text-[#34D399] leading-none font-serif mb-2">
               “
             </span>
 
             {/* 2. Compact Two-Line Statement */}
             <div 
-              className="text-[9.5px] font-medium tracking-[0.24em] uppercase text-[#E0D3C5] space-y-1 mb-3"
+              className="text-[9.5px] font-medium tracking-[0.24em] uppercase text-[#BBF7D0] space-y-1 mb-3"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <p>AUTOMATION IS MY CRAFT.</p>
@@ -272,11 +272,11 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* 3. Gold Accent Line */}
-            <div className="w-28 h-[1px] bg-gradient-to-r from-[#D4AF37] via-[#E8D7C5]/70 to-transparent shadow-[0_0_8px_rgba(212,175,55,0.4)] mb-2" />
+            <div className="w-28 h-[1px] bg-gradient-to-r from-[#10B981] via-[#A7F3D0]/70 to-transparent shadow-[0_0_8px_rgba(212,175,55,0.4)] mb-2" />
 
             {/* 4. Fine Monoline Calligraphy Signature */}
             <div 
-              className="text-[2.2rem] text-[#D8AB64] font-normal leading-none -ml-0.5"
+              className="text-[2.2rem] text-[#6EE7B7] font-normal leading-none -ml-0.5"
               style={{ 
                 fontFamily: "'Herr Von Muellerhoff', 'Allura', cursive",
                 letterSpacing: '0.04em',

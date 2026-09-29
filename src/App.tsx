@@ -9,7 +9,7 @@ import { CertificationsSection } from './components/CertificationsSection';
 
 function App() {
   return (
-    <div className="w-full min-h-screen bg-black text-[#E8DFD8] selection:bg-[#cbb59d] selection:text-black">
+    <div className="w-full min-h-screen bg-black text-[#D1FAE5] selection:bg-[#6EE7B7] selection:text-black">
       <HeroSection />
       <AboutSection />
       <ProjectsSection />
