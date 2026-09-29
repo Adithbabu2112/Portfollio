@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adith Babu — Automation Analyst</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Calibri, Arial, sans-serif;
+            font-size: 9pt;
+            line-height: 1.4;
+            color: #222;
+            background: #d6d6d6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        #cv {
+            width: 210mm;
+            margin: 10mm auto;
+            background: #fff;
+            box-shadow: 0 1px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 14mm 18mm 12mm 18mm;
+            overflow: hidden;
+        }
+
+        .page+.page {
+            border-top: 1px dashed #ccc;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                margin: 0;
+            }
+
+            #cv {
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .page {
+                overflow: visible;
+            }
+
+            .page+.page {
+                border-top: none;
+            }
+
+            .dl-btn {
+                display: none !important;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        /* ── HEADER ── */
+        .header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 20pt;
+            font-weight: 700;
+            color: #111;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 9.5pt;
+            font-weight: 400;
+            color: #555;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin: 3px 0 8px;
+        }
+
+        .divider {
+            height: 1.5px;
+            background: #111;
+            margin-bottom: 7px;
+        }
+
+        .contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            font-size: 8.5pt;
+            color: #444;
+            flex-wrap: wrap;
+        }
+
+        .contact a {
+            color: #1a6ee0;
+            text-decoration: none;
+        }
+
+        .contact svg {
+            width: 11px;
+            height: 11px;
+            fill: #555;
+            vertical-align: -1px;
+            margin-right: 3px;
+        }
+
+        .contact .sep {
+            display: inline-block;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: #aaa;
+        }
+
+        /* ── SECTIONS ── */
+        .sec {
+            margin-top: 9px;
+        }
+
+        .sec-title {
+            font-size: 8.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #111;
+            border-bottom: 1.2px solid #111;
+            padding-bottom: 2px;
+            margin-bottom: 6px;
+        }
+
+        /* ── SUMMARY ── */
+        .summary {
+            font-size: 8.5pt;
+            color: #333;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        /* ── SKILLS TABLE ── */
+        .skills {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .skills td {
+            padding: 2px 0;
+            font-size: 8.5pt;
+            line-height: 1.4;
+            vertical-align: top;
+        }
+
+        .skills .k {
+            font-weight: 700;
+            color: #111;
+            width: 215px;
+            white-space: nowrap;
+            padding-right: 6px;
+        }
+
+        .skills .k::after {
+            content: ":";
+        }
+
+        .skills .v {
+            color: #333;
+            padding-left: 4px;
+        }
+
+        /* ── ENTRIES ── */
+        .ent {
+            margin-bottom: 8px;
+        }
+
+        .ent-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .ent-role {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .ent-date {
+            font-size: 8.5pt;
+            color: #666;
+            white-space: nowrap;
+            padding-left: 10px;
+        }
+
+        .ent-co {
+            font-size: 8.5pt;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 3px;
+        }
+
+        .ent-loc {
+            font-style: normal;
+            color: #888;
+        }
+
+        /* ── BULLET LISTS — Native disc bullets for print reliability ── */
+        ul.bl {
+            list-style-type: disc;
+            padding-left: 16px;
+            margin: 0;
+        }
+
+        ul.bl li {
+            font-size: 8.5pt;
+            color: #333;
+            line-height: 1.48;
+            margin-bottom: 2px;
+            padding-left: 2px;
+        }
+
+        ul.bl li::marker {
+            color: #222;
+            font-size: 8pt;
+        }
+
+        /* ── PROJECTS ── */
+        .proj-name {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .proj-tech {
+            font-size: 8pt;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .proj-tech b {
+            font-weight: 600;
+            color: #444;
+        }
+
+        /* ── EDUCATION ── */
+        .edu-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .edu-deg {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .edu-yr {
+            font-size: 8.5pt;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .edu-inst {
+            font-size: 8.5pt;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 4px;
+        }
+
+        /* ── BOLD ── */
+        strong {
+            font-weight: 700;
+            color: #111;
+        }
+
+        /* ── DOWNLOAD BUTTON ── */
+        .dl-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            background: #111;
+            color: #fff;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 10pt;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+            transition: background 0.2s, transform 0.15s;
+            z-index: 9999;
+        }
+
+        .dl-btn:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+
+        .dl-btn:active {
+            transform: translateY(0);
+        }
+
+        .dl-btn svg {
+            width: 15px;
+            height: 15px;
+            fill: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="cv">
+
+        <!-- ══════════════ PAGE 1 ══════════════ -->
+        <div class="page">
+
+            <div class="header">
+                <div class="name">ADITH BABU</div>
+                <div class="title">Automation Analyst</div>
+                <div class="divider"></div>
+                <div class="contact">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path
+                                d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                        </svg><a href="mailto:adithbabu1221@gmail.com">adithbabu1221@gmail.com</a></span>
+                    <span class="sep"></span>
+                    <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path
+                                d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                        </svg><a href="tel:+918157899544">+91-8157899544</a></span>
+                    <span class="sep"></span>
+                    <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path
+                                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+                        </svg><a href="https://www.linkedin.com/in/adith-babu-7a3333257"
+                            target="_blank">linkedin.com/in/adith-babu</a></span>
+                    <span class="sep"></span>
+                    <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <path
+                                d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                        </svg>Kerala, India</span>
+                </div>
+            </div>
+
+            <!-- SUMMARY -->
+            <div class="sec">
+                <div class="sec-title">Professional Summary</div>
+                <p class="summary"><strong>Automation Analyst</strong> with experience designing and implementing
+                    business process automation solutions that eliminate repetitive manual tasks and improve operational
+                    efficiency. Specialized in analyzing existing workflows, identifying automation opportunities, and
+                    developing scalable <strong>internal applications, automation bots, and reporting systems</strong>.
+                    Experienced in managing the complete solution lifecycle, including <strong>requirements analysis,
+                        solution architecture, development, testing, deployment, production support, and continuous
+                        enhancement</strong>. Proven ability to build reliable production systems that reduce processing
+                    time, improve data accuracy, and support data-driven decision-making across business operations.</p>
+            </div>
+
+            <!-- TECHNICAL SKILLS -->
+            <div class="sec">
+                <div class="sec-title">Technical Skills</div>
+                <table class="skills">
+                    <tr>
+                        <td class="k">Programming Languages</td>
+                        <td class="v">Python, SQL, JavaScript, HTML5, CSS3, Dart</td>
+                    </tr>
+                    <tr>
+                        <td class="k">Frameworks &amp; Technologies</td>
+                        <td class="v">Django, Selenium, Power Automate, Flutter</td>
+                    </tr>
+                    <tr>
+                        <td class="k">APIs &amp; Integration</td>
+                        <td class="v">REST APIs, JSON, API Integration</td>
+                    </tr>
+                    <tr>
+                        <td class="k">Databases</td>
+                        <td class="v">Microsoft SQL Server, MySQL, SQLite, Supabase</td>
+                    </tr>
+                    <tr>
+                        <td class="k">Development &amp; Deployment</td>
+                        <td class="v">Git, GitHub, Waitress, Virtual Machine Management</td>
+                    </tr>
+                    <tr>
+                        <td class="k">Automation &amp; Process Engineering</td>
+                        <td class="v">Business Process Automation, Workflow Automation, Web Scraping, Web Automation, Windows
+                            Automation, System Integration</td>
+                    </tr>
+                    <tr>
+                        <td class="k">Core Competencies</td>
+                        <td class="v">Business Process Analysis, Internal Tool Development, Workflow Optimization,
+                            Production Deployment, Solution Design, Data Processing &amp; Reporting</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- PROFESSIONAL EXPERIENCE -->
+            <div class="sec">
+                <div class="sec-title">Professional Experience</div>
+
+                <div class="ent">
+                    <div class="ent-top">
+                        <span class="ent-role">Automation Analyst</span>
+                        <span class="ent-date">May 2025 – Present</span>
+                    </div>
+                    <div class="ent-co">Dentcare Dental Lab Pvt. Ltd. <span class="ent-loc">| Kerala, India</span></div>
+                    <ul class="bl">
+                        <li>Analyze business workflows to identify automation opportunities and design scalable solutions that improve operational efficiency and reduce manual effort.</li>
+                        <li>Design, develop, and deploy <strong>production-grade internal applications, automation bots, and workflow solutions</strong> using Python, Django, Selenium, Power Automate, and Microsoft SQL Server.</li>
+                        <li>Architect and integrate <strong>RESTful APIs</strong> to enable secure communication between internal applications, databases, and third-party systems.</li>
+                        <li>Lead the <strong>complete solution lifecycle</strong>, including business analysis, solution design, development, testing, deployment, documentation, and continuous improvement.</li>
+                        <li>Build <strong>automated reporting and data processing solutions</strong> that enhance operational visibility and support business decision-making.</li>
+                        <li>Manage production deployments and maintain automation systems hosted on <strong>virtual machines</strong>, ensuring reliability, scalability, and high availability.</li>
+                        <li>Collaborate with business stakeholders to translate operational requirements into practical automation solutions that deliver measurable business value.</li>
+                    </ul>
+                </div>
+
+                <div class="ent">
+                    <div class="ent-top">
+                        <span class="ent-role">Python Full Stack Development Intern</span>
+                        <span class="ent-date">Aug 2023 – Feb 2024</span>
+                    </div>
+                    <div class="ent-co">Luminar Technolab, Kochi <span class="ent-loc">| Kerala, India</span></div>
+                    <ul class="bl">
+                        <li>Completed intensive internship training in <strong>Python full stack development</strong>, building web applications using Django, RESTful APIs, and SQL databases.</li>
+                        <li>Developed and deployed full stack projects integrating frontend technologies (HTML5, CSS3, JavaScript) with <strong>Django backend</strong> and database management systems.</li>
+                        <li>Gained hands-on experience with <strong>Git-based version control</strong>, collaborative development workflows, and production deployment practices.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ══════════════ PAGE 2 ══════════════ -->
+        <div class="page">
+
+            <!-- KEY PROJECTS -->
+            <div class="sec" style="margin-top: 0;">
+                <div class="sec-title">Key Projects</div>
+
+                <div class="ent">
+                    <div class="proj-name">MIS Production Tracking Tool</div>
+                    <div class="proj-tech"><b>Tech Stack:</b> Python, Django, Microsoft SQL Server, OpenPyXL</div>
+                    <ul class="bl">
+                        <li>Designed and developed an <strong>enterprise-grade MIS production tracking system</strong>
+                            to automate employee production reporting across multiple departments.</li>
+                        <li>Built an intelligent data processing engine to clean, validate, and standardize unstructured
+                            POS Excel data using <strong>rule-based business logic</strong>.</li>
+                        <li>Implemented automated unit calculation algorithms with department-specific processing rules
+                            to ensure reporting accuracy.</li>
+                        <li>Developed a <strong>Django-based web application</strong> with secure file upload, automated
+                            processing, and dynamic report generation integrated with Microsoft SQL Server.</li>
+                        <li>Eliminated manual data preparation and reporting, reducing processing time from
+                            approximately <strong>360 hours to under 5 minutes</strong>, resulting in a 99.9% reduction
+                            in manual effort.</li>
+                    </ul>
+                </div>
+
+                <div class="ent">
+                    <div class="proj-name">Intra-Oral Scan Automation &amp; Analysis System</div>
+                    <div class="proj-tech"><b>Tech Stack:</b> Python, Django, Selenium, Watchdog, Microsoft SQL Server,
+                        Waitress</div>
+                    <ul class="bl">
+                        <li>Designed and implemented an <strong>end-to-end automation system</strong> for downloading, organizing, processing, and analyzing intra-oral scan cases from a cloud-based platform.</li>
+                        <li>Implemented <strong>web scraping solutions</strong> using Selenium to extract case data from cloud platforms, converting scraped content into structured HTML files for downstream processing and analysis.</li>
+                        <li>Developed an <strong>intelligent folder management system</strong> that automatically creates and maintains a structured directory hierarchy for case registration and file management.</li>
+                        <li>Built data extraction modules to process <strong>PDF, JSON, and HTML</strong> files, transforming unstructured information into standardized records stored in Microsoft SQL Server.</li>
+                        <li>Developed a <strong>centralized Django application</strong> for displaying processed scan information, enabling faster case registration and improved operational visibility.</li>
+                        <li>Designed the workflow to seamlessly integrate automated downloads, web scraping, structured file organization, data extraction, and case registration into a <strong>single streamlined process</strong>.</li>
+                        <li>Reduced case registration time from <strong>15 minutes to under 3 minutes</strong> per scan, improving processing efficiency by approximately 80%.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- EDUCATION -->
+            <div class="sec">
+                <div class="sec-title">Education</div>
+
+                <div style="margin-bottom: 5px;">
+                    <div class="edu-top">
+                        <span class="edu-deg">Bachelor of Computer Applications (BCA)</span>
+                        <span class="edu-yr">2020 – 2023</span>
+                    </div>
+                    <div class="edu-inst">Mar Augusthinose College, Ramapuram — Mahatma Gandhi University, Kerala</div>
+                </div>
+
+                <div style="margin-bottom: 5px;">
+                    <div class="edu-top">
+                        <span class="edu-deg">Higher Secondary Education (Computer Science)</span>
+                        <span class="edu-yr">2018 – 2020</span>
+                    </div>
+                    <div class="edu-inst">St. Augustine's Higher Secondary School, Karimkunnam</div>
+                </div>
+            </div>
+
+            <!-- PROFESSIONAL CERTIFICATIONS -->
+            <div class="sec">
+                <div class="sec-title">Professional Certifications</div>
+
+                <div class="ent" style="margin-bottom: 5px;">
+                    <div class="ent-top">
+                        <span class="ent-role" style="font-size: 9pt;">Python Web Development Expert</span>
+                    </div>
+                    <div class="ent-co">National Council for Technology and Training (NACTET)</div>
+                    <ul class="bl">
+                        <li>Certified in Python web development, validating expertise in application architecture, backend development, database integration, and deployment best practices.</li>
+                    </ul>
+                </div>
+
+                <div class="ent" style="margin-bottom: 5px;">
+                    <div class="ent-role" style="font-size: 9pt;">Front-End Development</div>
+                    <div class="ent-co">Great Learning</div>
+                    <ul class="bl">
+                        <li>Gained practical knowledge in responsive web development using HTML5, CSS3, JavaScript, and
+                            modern UI design principles.</li>
+                    </ul>
+                </div>
+
+                <div class="ent" style="margin-bottom: 5px;">
+                    <div class="ent-role" style="font-size: 9pt;">Leverage AI Tools and Resources for Your Business</div>
+                    <div class="ent-co">Microsoft</div>
+                    <ul class="bl">
+                        <li>Gained proficiency in leveraging AI-powered tools and technologies to enhance productivity, streamline workflows, and drive intelligent automation in professional environments.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div><!-- end #cv -->
+
+    <!-- DOWNLOAD BUTTON -->
+    <button class="dl-btn" id="downloadBtn" onclick="window.print()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+                d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+        </svg>
+        Save as PDF
+    </button>
+
+</body>
+
+</html>
