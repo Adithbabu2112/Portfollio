@@ -58,25 +58,26 @@ const projects: Project[] = [
   },
   {
     number: '03',
-    title: 'Django Internal Tools Suite',
-    category: 'FULL STACK / INTERNAL APPS',
+    title: 'EasyApply — AI Job Assistant',
+    category: 'AI AUTOMATION / FULL STACK',
     description:
-      'Collection of production-grade internal web applications built with Django for business process automation, data processing, and reporting. Features secure file upload, automated processing pipelines, dynamic report generation, and RESTful API integrations.',
+      'AI-powered job application platform that extracts job posting requirements from screenshots using OCR and LLMs, generates tailored cover letters and cold emails matched to the candidate CV profile, and dispatches them directly via Gmail API in one click.',
     githubUrl: 'https://github.com/adithbabu',
     tech: [
-      'Python',
-      'Django',
-      'JavaScript',
-      'HTML5',
-      'CSS3',
-      'SQL Server',
-      'REST APIs',
-      'Git',
+      'Python 3.13',
+      'FastAPI',
+      'Next.js 16',
+      'TypeScript',
+      'PostgreSQL',
+      'Redis',
+      'Docker',
+      'Gmail API',
+      'OpenAI / OCR',
     ],
     metrics: [
-      { label: 'STACK', value: 'Django Full Stack' },
-      { label: 'DATABASE', value: 'SQL Server + SQLite' },
-      { label: 'DEPLOYMENT', value: 'VM + Waitress' },
+      { label: 'BACKEND', value: 'FastAPI + Celery + Redis' },
+      { label: 'FRONTEND', value: 'Next.js 16 + Tailwind' },
+      { label: 'INTEGRATIONS', value: 'Gmail API + OpenAI' },
     ],
   },
 ];
@@ -85,7 +86,7 @@ export const ProjectsSection: React.FC = () => {
   return (
     <section
       id="work"
-      className="relative w-full bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black pt-20 pb-32 px-6 sm:px-12 lg:px-20"
+      className="relative w-full bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black pt-20 pb-12 px-6 sm:px-12 lg:px-20"
     >
       {/* Studio Ambient Glows */}
       <div className="absolute top-1/4 left-1/3 w-[36rem] h-[36rem] bg-[#10B981]/5 rounded-full blur-[180px] pointer-events-none" />
