@@ -216,7 +216,7 @@ export const ProjectsSection: React.FC = () => {
                   </div>
 
                   {/* Right Column (5 Cols) */}
-                  <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 lg:pl-6 lg:border-l lg:border-[#1E3A2F]/25">
+                  <div className="lg:col-span-5 flex flex-col justify-center h-full space-y-6 lg:pl-6 lg:border-l lg:border-[#1E3A2F]/25">
                     <div className="space-y-3">
                       <span className="text-[9.5px] font-mono tracking-[0.25em] uppercase text-[#1E3A2F] block mb-2">
                         // ARCHITECTURE METRICS
@@ -235,17 +235,6 @@ export const ProjectsSection: React.FC = () => {
                         </div>
                       ))}
                     </div>
-
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center space-x-3 px-6 py-3.5 border border-[#1E3A2F] bg-[#132A1E] hover:border-[#10B981] hover:bg-[#10B981] text-[#D1FAE5] hover:text-black text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.1)]"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                    >
-                      <span>VIEW ON GITHUB</span>
-                      <span className="text-xs">↗</span>
-                    </a>
                   </div>
 
                 </div>
