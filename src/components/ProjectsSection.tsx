@@ -64,18 +64,17 @@ const projects: Project[] = [
       'AI-powered job application platform that extracts job posting requirements from screenshots using OCR and LLMs, generates tailored cover letters and cold emails matched to the candidate CV profile, and dispatches them directly via Gmail API in one click.',
     githubUrl: 'https://github.com/adithbabu',
     tech: [
-      'Python 3.13',
+      'Python',
       'FastAPI',
       'Next.js 16',
       'TypeScript',
       'PostgreSQL',
-      'Redis',
-      'Docker',
       'Gmail API',
       'OpenAI / OCR',
+      'Tailwind CSS',
     ],
     metrics: [
-      { label: 'BACKEND', value: 'FastAPI + Celery + Redis' },
+      { label: 'BACKEND', value: 'FastAPI + PostgreSQL' },
       { label: 'FRONTEND', value: 'Next.js 16 + Tailwind' },
       { label: 'INTEGRATIONS', value: 'Gmail API + OpenAI' },
     ],
@@ -86,7 +85,7 @@ export const ProjectsSection: React.FC = () => {
   return (
     <section
       id="work"
-      className="relative w-full bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black pt-20 pb-12 px-6 sm:px-12 lg:px-20"
+      className="relative w-full bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black pt-10 lg:pt-12 pb-6 px-6 sm:px-12 lg:px-20"
     >
       {/* Studio Ambient Glows */}
       <div className="absolute top-1/4 left-1/3 w-[36rem] h-[36rem] bg-[#10B981]/5 rounded-full blur-[180px] pointer-events-none" />
@@ -152,7 +151,7 @@ export const ProjectsSection: React.FC = () => {
 >
           {projects.map((project) => (
             <ScrollStackItem key={project.title}>
-              <div className="relative w-full rounded-2xl border border-[#1E3A2F]/50 bg-[#0A1F14] p-8 sm:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#10B981]">
+              <div className="relative w-full rounded-2xl border border-[#1E3A2F]/50 bg-[#0A1F14] p-8 sm:p-12 sm:pb-14 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#10B981]">
                 
                 {/* Top Gold Border Light Flare */}
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#10B981]/80 to-transparent" />
@@ -194,7 +193,7 @@ export const ProjectsSection: React.FC = () => {
                       </h3>
 
                       <p
-                        className="text-xs sm:text-sm md:text-[14px] font-light text-[#7DA88A] leading-[1.85] tracking-wide mb-8 max-w-2xl"
+                        className="text-xs sm:text-sm md:text-[14px] font-light text-[#7DA88A] leading-[1.85] tracking-wide mb-6 max-w-2xl"
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
                       >
                         {project.description}
@@ -202,7 +201,7 @@ export const ProjectsSection: React.FC = () => {
                     </div>
 
                     {/* Tech Stack Pills */}
-                    <div className="flex flex-wrap gap-2 pt-6 border-t border-[#1E3A2F]/25">
+                    <div className="flex flex-wrap gap-2 pt-5 border-t border-[#1E3A2F]/25">
                       {project.tech.map((t) => (
                         <span
                           key={t}

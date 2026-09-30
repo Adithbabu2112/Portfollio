@@ -32,7 +32,7 @@ export const AboutSection: React.FC = () => {
   return (
     <section 
       id="about" 
-      className="relative w-screen min-h-screen bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black py-24 lg:py-32 px-6 sm:px-12 lg:px-20 overflow-hidden flex items-center"
+      className="relative w-screen bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black pt-16 lg:pt-20 pb-8 lg:pb-10 px-6 sm:px-12 lg:px-20 overflow-hidden flex items-center"
     >
       {/* ================= BACKGROUND GLOWS & FLOATING PARTICLES ================= */}
       <motion.div 
@@ -83,10 +83,10 @@ export const AboutSection: React.FC = () => {
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#7DA88A] to-[#1E3A2F] drop-shadow-[0_4px_10px_rgba(0,0,0,0.85)]">
-                  I DON'T JUST WRITE CODE.
+                  TURNING HOURS OF EFFORT
                 </span>
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#A7F3D0] via-[#34D399] to-[#064E3B] drop-shadow-[0_8px_25px_rgba(201,158,93,0.3)]">
-                  I BUILD WHAT'S NEXT.
+                  INTO SECONDS OF EXECUTION.
                 </span>
               </h2>
             </motion.div>
@@ -97,7 +97,7 @@ export const AboutSection: React.FC = () => {
               className="text-xs sm:text-sm md:text-[14.5px] font-light text-[#7DA88A] leading-[1.85] tracking-wide mb-10 max-w-xl"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              I'm <span className="text-[#A7F3D0] font-medium">Adith Babu</span>, an Automation Analyst and Python Developer specializing in building production-grade automation systems, internal tools, and workflow solutions. With strong skills in Django, Selenium, and SQL Server, I turn complex manual processes into efficient automated pipelines.
+              I'm <span className="text-[#A7F3D0] font-medium">Adith Babu</span>, an Automation Analyst and Python Developer specializing in building production-grade automation systems, internal tools, and modern web applications. With strong skills across Python, FastAPI, Django, and Next.js, I turn complex manual processes into efficient, intelligent automated pipelines.
             </motion.p>
 
             {/* Concise 4-Item Achievement Metrics Grid */}
@@ -111,10 +111,10 @@ export const AboutSection: React.FC = () => {
                   className="text-3xl sm:text-4xl font-light text-[#D1FAE5] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
-                  99.9%
+                  3+
                 </span>
                 <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#5B7C65] mt-0.5">
-                  Effort Reduction
+                  Years Experience
                 </span>
               </div>
 
@@ -127,7 +127,7 @@ export const AboutSection: React.FC = () => {
                   BCA
                 </span>
                 <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#5B7C65] mt-0.5">
-                  Degree (MG University)
+                  MG University
                 </span>
               </div>
 
@@ -137,10 +137,10 @@ export const AboutSection: React.FC = () => {
                   className="text-3xl sm:text-4xl font-light text-[#D1FAE5] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
-                  80%
+                  100%
                 </span>
                 <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#5B7C65] mt-0.5">
-                  Efficiency Gains
+                  Data Accuracy
                 </span>
               </div>
 
@@ -150,10 +150,10 @@ export const AboutSection: React.FC = () => {
                   className="text-3xl sm:text-4xl font-light text-[#10B981] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
-                  360 → 5
+                  24/7
                 </span>
                 <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#5B7C65] mt-0.5">
-                  Hours to Minutes
+                  Autonomous Uptime
                 </span>
               </div>
             </motion.div>
@@ -210,7 +210,7 @@ export const AboutSection: React.FC = () => {
                         <img
                           src={aboutImg}
                           alt="Adith Babu"
-                          className="w-full h-full object-cover object-top"
+                          className="w-full h-full object-cover scale-[1.65] origin-[50%_22%] transition-transform duration-500"
                         />
                       </div>
                       <div className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-[#10B981] border-2 border-[#071210] shadow-[0_0_10px_rgba(16,185,129,0.6)]" />
@@ -257,6 +257,46 @@ export const AboutSection: React.FC = () => {
                         <span className="text-xs text-[#7DA88A] group-hover/link:text-[#D1FAE5] transition-colors tracking-wide" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                           adithbabu1221@gmail.com
                         </span>
+                      </a>
+                    </div>
+
+                    {/* Social Media Links */}
+                    <div className="flex items-center justify-center space-x-3 pt-4">
+                      {/* LinkedIn */}
+                      <a
+                        href="https://www.linkedin.com/in/adith-babu-7a3333257"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 rounded-md bg-[#1E3A2F]/60 border border-[#10B981]/25 flex items-center justify-center text-[#10B981] hover:text-black hover:bg-[#10B981] hover:border-[#10B981] transition-all"
+                        aria-label="LinkedIn"
+                      >
+                        <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.95 0-1.72.78-1.72 1.73s.77 1.73 1.72 1.73 1.73-.78 1.73-1.73-.78-1.73-1.73-1.73Z"/>
+                        </svg>
+                      </a>
+                      {/* Instagram */}
+                      <a
+                        href="https://www.instagram.com/a_d_i_t_h.____"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 rounded-md bg-[#1E3A2F]/60 border border-[#10B981]/25 flex items-center justify-center text-[#10B981] hover:text-black hover:bg-[#10B981] hover:border-[#10B981] transition-all"
+                        aria-label="Instagram"
+                      >
+                        <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                      </a>
+                      {/* Facebook */}
+                      <a
+                        href="https://www.facebook.com/share/1DnxPVStat/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 rounded-md bg-[#1E3A2F]/60 border border-[#10B981]/25 flex items-center justify-center text-[#10B981] hover:text-black hover:bg-[#10B981] hover:border-[#10B981] transition-all"
+                        aria-label="Facebook"
+                      >
+                        <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
                       </a>
                     </div>
                   </div>

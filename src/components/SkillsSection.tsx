@@ -6,32 +6,32 @@ const bentoCategories = [
   {
     title: 'AUTOMATION & PROCESS ENGINEERING',
     badge: 'CORE PILLAR',
-    items: ['Python', 'Selenium', 'Power Automate', 'Watchdog', 'OpenPyXL'],
-    description: 'Specialized in business process automation, web scraping, workflow optimization, and building scalable automation bots that eliminate manual effort.',
+    items: ['Python', 'Selenium', 'AI / OCR Pipelines', 'Power Automate', 'Watchdog', 'OpenPyXL'],
+    description: 'Specialized in business process automation, web scraping, OCR extraction, workflow optimization, and building scalable automation bots that eliminate manual effort.',
     stat: '99.9% EFFORT SAVED',
     colSpan: 'lg:col-span-7',
   },
   {
     title: 'BACKEND & FRAMEWORKS',
     badge: 'FULL STACK',
-    items: ['Django', 'REST APIs', 'Waitress', 'Flutter', 'Dart'],
-    description: 'Building production-grade web applications with Django, designing RESTful APIs, and deploying on virtual machines with high availability.',
+    items: ['FastAPI', 'Django', 'REST APIs', 'Waitress'],
+    description: 'Building high-performance async APIs with FastAPI and robust enterprise systems with Django, deploying with production reliability.',
     stat: 'PRODUCTION READY',
     colSpan: 'lg:col-span-5',
   },
   {
     title: 'DATABASE SYSTEMS',
     badge: 'PERSISTENCE',
-    items: ['Microsoft SQL Server', 'MySQL', 'SQLite', 'Supabase'],
-    description: 'Designing resilient database schemas with optimized queries, data processing pipelines, and automated reporting integrations.',
+    items: ['PostgreSQL', 'Microsoft SQL Server', 'MySQL', 'SQLite', 'Supabase'],
+    description: 'Designing resilient relational schemas with optimized queries, data processing pipelines, and cloud database integrations.',
     stat: 'SQL & NOSQL',
     colSpan: 'lg:col-span-5',
   },
   {
     title: 'WEB DEVELOPMENT & TOOLS',
     badge: 'FRONTEND + DEVOPS',
-    items: ['JavaScript', 'HTML5', 'CSS3', 'Git', 'GitHub', 'VM Management'],
-    description: 'Building responsive frontends, managing version control, and handling production deployments on virtual machines.',
+    items: ['Next.js', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Git / GitHub'],
+    description: 'Building modern responsive web applications with Next.js & TypeScript, managing version control, and continuous integration workflows.',
     stat: 'END-TO-END',
     colSpan: 'lg:col-span-7',
   },
@@ -67,7 +67,7 @@ export const SkillsSection: React.FC = () => {
   return (
     <section
       id="skills"
-      className="relative w-screen bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black pt-8 pb-24 px-6 sm:px-12 lg:px-20 overflow-hidden flex flex-col justify-center"
+      className="relative w-screen bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black pt-10 pb-24 px-6 sm:px-12 lg:px-20 overflow-hidden flex flex-col justify-center"
     >
       {/* Ambient Glows */}
       <div className="absolute top-1/3 left-1/4 w-[34rem] h-[34rem] bg-[#10B981]/5 rounded-full blur-[170px] pointer-events-none" />

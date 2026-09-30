@@ -32,6 +32,13 @@ const journey: RouteStop[] = [
     organization: 'MAR AUGUSTHINOSE COLLEGE — MG UNIVERSITY',
     description: 'Specialized in Computer Science with focus on web development, database management, and programming fundamentals.',
   },
+  {
+    id: '04',
+    year: '2018 - 2020',
+    title: 'HIGHER SECONDARY (COMPUTER SCIENCE)',
+    organization: "ST. AUGUSTINE'S HIGHER SECONDARY SCHOOL, KARIMKUNNAM",
+    description: 'Specialized in Computer Science and Mathematics, building early foundations in programming, computer fundamentals, and analytical problem-solving.',
+  },
 ];
 
 export const ExperienceSection: React.FC = () => {

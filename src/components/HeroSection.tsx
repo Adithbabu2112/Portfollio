@@ -148,7 +148,7 @@ export const HeroSection: React.FC = () => {
             className="group flex items-center space-x-2 text-[11px] tracking-[0.24em] font-light uppercase py-2 px-4 border border-[#1E3A2F]/50 hover:border-[#10B981] text-[#D1FAE5] transition-all duration-300 backdrop-blur-sm ml-auto md:ml-0"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
-            <span>LET&apos;S TALK</span>
+            <span>CONTACT ME</span>
             <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-xs">
               ↗
             </span>
@@ -268,7 +268,12 @@ export const HeroSection: React.FC = () => {
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <p>AUTOMATION IS MY CRAFT.</p>
-              <p>EFFICIENCY IS MY GOAL.</p>
+              <p className="flex items-center">
+                <span>EFFICIENCY IS MY GOAL.</span>
+                <span className="text-xl text-[#34D399] leading-none font-serif ml-1 -mt-1">
+                  ”
+                </span>
+              </p>
             </div>
 
             {/* 3. Gold Accent Line */}
