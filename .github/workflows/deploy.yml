@@ -30,7 +30,7 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --force
 
       - name: Build site with Vite
         run: npm run build
