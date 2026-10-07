@@ -1,14 +1,49 @@
 // src/components/ContactSection.tsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { GOOGLE_SHEET_URL } from '../config';
 
 export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    try {
+      const payload = JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        timestamp: new Date().toISOString(),
+      });
+
+      if (GOOGLE_SHEET_URL && GOOGLE_SHEET_URL.trim() !== '') {
+        await fetch(GOOGLE_SHEET_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+          },
+          body: payload,
+          mode: 'no-cors',
+        });
+      } else {
+        // Fallback simulation when URL has not yet been set in .env
+        await new Promise((resolve) => setTimeout(resolve, 800));
+      }
+
+      setSent(true);
+      setFormData({ name: '', email: '', message: '' });
+    } catch (err) {
+      console.error('Submission error:', err);
+      setErrorMessage('Transmission failed. Please try again or reach out directly via email.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -173,13 +208,27 @@ export const ContactSection: React.FC = () => {
                 <h3 className="text-3xl text-white font-normal uppercase" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                   MESSAGE SENT
                 </h3>
-                <p className="text-xs text-[#A7F3D0] font-light" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                  Thank you for reaching out. I'll get back to you soon.
+                <p className="text-xs text-[#A7F3D0] font-light max-w-sm mx-auto" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                  Thank you for reaching out. Your message has been received and I will get back to you shortly.
                 </p>
+                <div className="pt-2">
+                  <button
+                    onClick={() => setSent(false)}
+                    className="text-[10px] font-mono tracking-widest text-[#10B981] hover:text-[#A7F3D0] underline uppercase transition-colors"
+                  >
+                    SEND ANOTHER MESSAGE
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 
+                {errorMessage && (
+                  <div className="p-3 bg-[#1F1315] border border-red-500/40 rounded-sm text-xs font-mono text-red-300">
+                    {errorMessage}
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-[11px] font-medium tracking-[0.18em] uppercase text-[#10B981] mb-2 font-mono">
@@ -229,10 +278,13 @@ export const ContactSection: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-4 border border-[#10B981]/50 bg-[#10B981]/15 hover:bg-[#10B981] text-[#D1FAE5] hover:text-black text-xs font-semibold tracking-[0.22em] uppercase transition-all duration-300 shadow-[0_4px_25px_rgba(16,185,129,0.15)]"
+                  disabled={isSubmitting}
+                  className={`w-full py-4 border border-[#10B981]/50 bg-[#10B981]/15 hover:bg-[#10B981] text-[#D1FAE5] hover:text-black text-xs font-semibold tracking-[0.22em] uppercase transition-all duration-300 shadow-[0_4px_25px_rgba(16,185,129,0.15)] ${
+                    isSubmitting ? 'opacity-70 cursor-wait' : ''
+                  }`}
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  SEND MESSAGE ↗
+                  {isSubmitting ? 'SENDING.....' : 'SEND MESSAGE ↗'}
                 </button>
 
               </form>
@@ -242,12 +294,9 @@ export const ContactSection: React.FC = () => {
         </div>
 
         {/* System Footer Line */}
-        <div className="pt-16 mt-16 border-t border-[#1E3A2F]/15 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-4">
-          <span className="text-[10px] font-mono tracking-widest text-[#1E3A2F] uppercase">
-            PORTFOLIO // EDITION 2026
-          </span>
-          <span className="text-[10px] font-mono text-[#1E3A2F]">
-            © {new Date().getFullYear()} • ENGINEERED WITH PRECISION
+        <div className="pt-16 mt-16 border-t border-[#1E3A2F]/15 flex items-center justify-center text-center">
+          <span className="text-[10px] font-mono tracking-[0.2em] text-[#1E3A2F] transition-colors hover:text-[#5B7C65] select-none">
+            AdithPortfolio©2026
           </span>
         </div>
 

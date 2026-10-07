@@ -104,12 +104,12 @@ export const ExperienceSection: React.FC = () => {
         <div className="relative w-full">
           
           {/* Background Track */}
-          <div className="absolute left-[19px] md:left-[140px] top-4 bottom-8 w-[1px] bg-[#1E3A2F]/20" />
+          <div className="absolute left-[19px] md:left-[200px] top-4 bottom-8 w-[1px] bg-[#1E3A2F]/20" />
           
           {/* Animated Emerald Track */}
           <motion.div
             style={{ height: lineHeight }}
-            className="absolute left-[19px] md:left-[140px] top-4 w-[2px] bg-gradient-to-b from-[#10B981] via-[#34D399] to-[#1E3A2F]/10 shadow-[0_0_10px_#10B981] origin-top"
+            className="absolute left-[19px] md:left-[200px] top-4 w-[2px] bg-gradient-to-b from-[#10B981] via-[#34D399] to-[#1E3A2F]/10 shadow-[0_0_10px_#10B981] origin-top"
           />
 
           <div className="space-y-12">
@@ -123,23 +123,23 @@ export const ExperienceSection: React.FC = () => {
                 className="relative flex flex-col md:flex-row items-start group"
               >
                 {/* Desktop Year (Left side of track) */}
-                <div className="hidden md:block w-[140px] shrink-0 pr-8 pt-0.5 text-right">
-                  <span className="text-[10px] font-mono tracking-[0.2em] text-[#1E3A2F] group-hover:text-[#10B981] transition-colors">
+                <div className="hidden md:block w-[200px] shrink-0 pr-8 pt-0.5 text-right">
+                  <span className="text-[10px] font-mono tracking-[0.16em] text-[#1E3A2F] group-hover:text-[#10B981] transition-colors whitespace-nowrap inline-block">
                     {stop.year}
                   </span>
                 </div>
 
                 {/* Route Node */}
-                <div className="absolute left-[19px] md:left-[140px] top-1.5 -translate-x-1/2 flex items-center justify-center">
+                <div className="absolute left-[19px] md:left-[200px] top-1.5 -translate-x-1/2 flex items-center justify-center">
                   <div className="absolute w-6 h-6 rounded-full border border-[#10B981]/0 group-hover:border-[#10B981]/40 group-hover:scale-150 transition-all duration-700 ease-out" />
                   <div className="w-2.5 h-2.5 rounded-full bg-[#0A1F14] border border-[#1E3A2F] group-hover:bg-[#10B981] group-hover:border-[#10B981] group-hover:shadow-[0_0_12px_#10B981] transition-colors duration-300" />
                 </div>
 
                 {/* Content (Right side of track) */}
-                <div className="ml-14 md:ml-12 pl-2">
+                <div className="ml-14 md:ml-8 pl-2">
                   {/* Mobile Year */}
                   <div className="md:hidden mb-1.5">
-                    <span className="text-[10px] font-mono tracking-[0.2em] text-[#10B981]">
+                    <span className="text-[10px] font-mono tracking-[0.18em] text-[#10B981] whitespace-nowrap inline-block">
                       {stop.year}
                     </span>
                   </div>

@@ -29,6 +29,28 @@ export interface ScrollStackProps {
   onStackComplete?: () => void;
 }
 
+const getElementPageTop = (element: HTMLElement | null): number => {
+  if (!element) return 0;
+  let top = 0;
+  let curr: HTMLElement | null = element;
+  while (curr) {
+    top += curr.offsetTop;
+    curr = curr.offsetParent as HTMLElement | null;
+  }
+  return top;
+};
+
+const getCardNaturalTop = (
+  card: HTMLElement,
+  i: number,
+  fallbackMap: Map<number, { translateY: number }>
+): number => {
+  const pageTop = getElementPageTop(card);
+  if (pageTop > 0) return pageTop;
+  const currentTranslateY = fallbackMap.get(i)?.translateY || 0;
+  return card.getBoundingClientRect().top + window.scrollY - currentTranslateY;
+};
+
 const ScrollStack: React.FC<ScrollStackProps> = ({
   children,
   className = '',
@@ -49,7 +71,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
   const lenisRef = useRef<Lenis | null>(null);
   const cardsRef = useRef<HTMLElement[]>([]);
   const initialTopsRef = useRef<number[]>([]);
-  const lastTransformsRef = useRef(new Map());
+  const lastTransformsRef = useRef<Map<number, { translateY: number; scale: number; rotation: number; blur: number }>>(new Map());
   const isUpdatingRef = useRef(false);
 
   const calculateProgress = useCallback((scrollTop: number, start: number, end: number) => {
@@ -94,13 +116,24 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       : (scrollerRef.current?.querySelector('.scroll-stack-end') as HTMLElement);
 
     const endElementTop = endElement
-      ? endElement.getBoundingClientRect().top + window.scrollY
+      ? getElementPageTop(endElement) || (endElement.getBoundingClientRect().top + window.scrollY)
       : 0;
+
+    // Resynchronize if unpopulated or when returning to top
+    if (
+      !initialTopsRef.current.length ||
+      initialTopsRef.current.length !== cardsRef.current.length ||
+      scrollTop <= 30
+    ) {
+      initialTopsRef.current = cardsRef.current.map((card, i) =>
+        getCardNaturalTop(card, i, lastTransformsRef.current)
+      );
+    }
 
     cardsRef.current.forEach((card, i) => {
       if (!card) return;
 
-      const cardTop = initialTopsRef.current[i] || 0;
+      const cardTop = initialTopsRef.current[i] || getCardNaturalTop(card, i, lastTransformsRef.current);
       const triggerStart = cardTop - stackPositionPx - itemStackDistance * i;
       const triggerEnd = cardTop - scaleEndPositionPx;
       const pinStart = cardTop - stackPositionPx - itemStackDistance * i;
@@ -204,6 +237,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     });
 
     lenis.on('scroll', handleScroll);
+    lenis.resize();
 
     const raf = (time: number) => {
       lenis.raf(time);
@@ -222,12 +256,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
 
     cardsRef.current = cards;
 
-    // Record static natural top positions before any transforms are applied
-    initialTopsRef.current = cards.map((card) => {
-      const rect = card.getBoundingClientRect();
-      return rect.top + window.scrollY;
-    });
-
     cards.forEach((card, i) => {
       card.style.zIndex = `${i + 1}`;
       if (i < cards.length - 1) {
@@ -240,10 +268,47 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       card.style.perspective = '1000px';
     });
 
+    const measureTops = () => {
+      if (!cardsRef.current.length) return;
+      initialTopsRef.current = cardsRef.current.map((card, i) =>
+        getCardNaturalTop(card, i, lastTransformsRef.current)
+      );
+      lastTransformsRef.current.clear();
+      updateCardTransforms();
+    };
+
+    measureTops();
     setupLenis();
-    updateCardTransforms();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', measureTops, { passive: true });
+
+    if (document.fonts) {
+      document.fonts.ready.then(() => {
+        measureTops();
+        lenisRef.current?.resize();
+      });
+    }
+
+    const t1 = setTimeout(measureTops, 150);
+    const t2 = setTimeout(measureTops, 600);
+
+    let resizeObserver: ResizeObserver | null = null;
+    if (typeof ResizeObserver !== 'undefined') {
+      resizeObserver = new ResizeObserver(() => {
+        measureTops();
+        lenisRef.current?.resize();
+      });
+      if (scrollerRef.current) resizeObserver.observe(scrollerRef.current);
+      if (document.body) resizeObserver.observe(document.body);
+    }
 
     return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', measureTops);
+      clearTimeout(t1);
+      clearTimeout(t2);
+      if (resizeObserver) resizeObserver.disconnect();
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
@@ -269,6 +334,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     onStackComplete,
     setupLenis,
     updateCardTransforms,
+    handleScroll,
   ]);
 
   return (

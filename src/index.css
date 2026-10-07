@@ -7,3 +7,62 @@ body {
   overflow-x: hidden;
   background-color: #000;
 }
+
+/* ================= THEME GREEN SCROLLBAR ================= */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #10b981 #050d08;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050d08;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #34d399;
+  box-shadow: 0 0 14px rgba(52, 211, 153, 0.7);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 4px;
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #050d08;
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 9999px;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #34d399;
+}
+
+/* ================= HIDE SCROLLBAR UTILITY ================= */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

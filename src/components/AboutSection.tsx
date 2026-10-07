@@ -111,7 +111,7 @@ export const AboutSection: React.FC = () => {
                   className="text-3xl sm:text-4xl font-light text-[#D1FAE5] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
-                  3+
+                  2
                 </span>
                 <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#5B7C65] mt-0.5">
                   Years Experience
