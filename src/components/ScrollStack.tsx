@@ -23,7 +23,6 @@ export interface ScrollStackProps {
   stackPosition?: string;
   scaleEndPosition?: string;
   baseScale?: number;
-  scaleDuration?: number;
   rotationAmount?: number;
   blurAmount?: number;
   useWindowScroll?: boolean;

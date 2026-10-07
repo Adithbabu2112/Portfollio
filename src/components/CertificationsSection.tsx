@@ -58,7 +58,7 @@ export const CertificationsSection: React.FC = () => {
   return (
     <section
       id="certifications"
-      className="relative w-full bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black pt-4 pb-24 px-6 sm:px-12 lg:px-20 overflow-hidden"
+      className="relative z-20 w-full bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black pt-4 pb-24 px-4 sm:px-12 lg:px-20 overflow-hidden"
     >
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-1/3 w-[32rem] h-[32rem] bg-[#10B981]/[0.03] rounded-full blur-[150px] pointer-events-none" />
@@ -98,7 +98,7 @@ export const CertificationsSection: React.FC = () => {
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#7DA88A] to-[#1E3A2F] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
               VERIFIED
             </span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#A7F3D0] via-[#34D399] to-[#064E3B] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#A7F3D0] via-[#34D399] to-[#064E3B] drop-shadow-[0_8px_25px_rgba(16,185,129,0.35)]">
               CREDENTIALS.
             </span>
           </h2>
@@ -117,7 +117,7 @@ export const CertificationsSection: React.FC = () => {
               key={cert.title}
               variants={cardVariants}
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              className="relative p-7 sm:p-8 rounded-sm border border-[#1E3A2F]/35 bg-[#0A1F14]/85 backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-[#10B981]/80 hover:shadow-[0_16px_45px_rgba(212,175,55,0.14)] cursor-default group"
+              className="relative p-7 sm:p-8 rounded-sm border border-[#1E3A2F]/35 bg-[#0A1F14]/85 backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-[#10B981]/80 hover:shadow-[0_16px_45px_rgba(16,185,129,0.14)] cursor-default group"
             >
               {/* Top Subtle Border Highlight */}
               <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#10B981]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

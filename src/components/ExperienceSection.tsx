@@ -13,7 +13,7 @@ interface RouteStop {
 const journey: RouteStop[] = [
   {
     id: '01',
-    year: 'MAY 2025 - PRESENT',
+    year: 'MAY 2025 - OCT 2026',
     title: 'AUTOMATION ANALYST',
     organization: 'DENTCARE DENTAL LAB PVT. LTD.',
     description: 'Designing and deploying production-grade internal applications, automation bots, and workflow solutions using Python, Django, Selenium, Power Automate, and Microsoft SQL Server. Reduced processing time from 360 hours to under 5 minutes.',
@@ -55,7 +55,7 @@ export const ExperienceSection: React.FC = () => {
     <section
       id="experience"
       ref={containerRef}
-      className="relative w-full bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black pt-4 pb-24 px-6 sm:px-12 lg:px-20 overflow-hidden"
+      className="relative z-20 w-full bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black pt-4 pb-24 px-4 sm:px-12 lg:px-20 overflow-hidden"
     >
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-[#10B981]/[0.03] rounded-full blur-[150px] pointer-events-none" />
@@ -94,7 +94,7 @@ export const ExperienceSection: React.FC = () => {
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#7DA88A] to-[#1E3A2F] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
               EXPERIENCE &amp;
             </span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#A7F3D0] via-[#34D399] to-[#064E3B] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#A7F3D0] via-[#34D399] to-[#064E3B] drop-shadow-[0_8px_25px_rgba(16,185,129,0.35)]">
               MILESTONES.
             </span>
           </h2>
@@ -106,7 +106,7 @@ export const ExperienceSection: React.FC = () => {
           {/* Background Track */}
           <div className="absolute left-[19px] md:left-[140px] top-4 bottom-8 w-[1px] bg-[#1E3A2F]/20" />
           
-          {/* Animated Gold Track */}
+          {/* Animated Emerald Track */}
           <motion.div
             style={{ height: lineHeight }}
             className="absolute left-[19px] md:left-[140px] top-4 w-[2px] bg-gradient-to-b from-[#10B981] via-[#34D399] to-[#1E3A2F]/10 shadow-[0_0_10px_#10B981] origin-top"

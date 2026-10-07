@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adith Babu — Automation Analyst</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
     <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
@@ -425,7 +426,7 @@
                 <div class="ent">
                     <div class="ent-top">
                         <span class="ent-role">Automation Analyst</span>
-                        <span class="ent-date">May 2025 – Present</span>
+                        <span class="ent-date">May 2025 – Oct 2026</span>
                     </div>
                     <div class="ent-co">Dentcare Dental Lab Pvt. Ltd. <span class="ent-loc">| Kerala, India</span></div>
                     <ul class="bl">
@@ -463,6 +464,34 @@
                 <div class="sec-title">Key Projects</div>
 
                 <div class="ent">
+                    <div class="proj-name">Intra-Oral Scan Automation &amp; Operations Platform</div>
+                    <div class="proj-tech"><b>Tech Stack:</b> Python, Django, Web Scraping, Selenium RPA, Python Watchdog, BeautifulSoup, Microsoft SQL Server, Waitress, 7-Zip, OpenPyXL</div>
+                    <ul class="bl">
+                        <li>Architected an end-to-end multi-tier pipeline connecting an <strong>RPA download bot</strong>, an asynchronous <strong>folder watching daemon</strong>, and a centralized <strong>Django operations web platform</strong>.</li>
+                        <li>Automated scan ingestion using Selenium RPA to download incoming cases one-by-one from cloud scanner portals, saving each case's 3D scan ZIP into a structured date/case directory hierarchy.</li>
+                        <li>Implemented high-accuracy <strong>web scraping</strong> to extract patient records, doctor prescriptions, and tooth notations from cloud portal drawers, dynamically compiling them into standalone HTML order sheets to replace manual PDF printing.</li>
+                        <li>Automated background extraction of compressed 3D dental scan packages via <strong>headless 7-Zip CLI</strong> immediately upon arrival.</li>
+                        <li>Built an asynchronous directory watcher daemon using Python Watchdog that detects newly extracted scan folders, parses clinical metadata from HTML, XML, and PDF files, and populates Microsoft SQL Server in real time.</li>
+                        <li>Developed a high-throughput <strong>Django web application</strong> where technicians execute extensive file and folder operations, directory routing between departments, case status locking, order specification reviews, and final registration.</li>
+                        <li>Implemented an <strong>automated customer code &amp; barcode sync service</strong> using OpenPyXL and HTTP streams to maintain real-time database consistency with master enterprise records.</li>
+                        <li>Reduced case registration and preparation time from <strong>15 minutes to under 3 minutes per scan</strong>, delivering an 80% increase in operational throughput.</li>
+                    </ul>
+                </div>
+
+                <div class="ent">
+                    <div class="proj-name">Multi-Zone CAM Operations &amp; Machine Telemetry Platform</div>
+                    <div class="proj-tech"><b>Tech Stack:</b> Python, Django, Microsoft SQL Server, Waitress WSGI, REST APIs, Role-Based Access Control</div>
+                    <ul class="bl">
+                        <li>Developed a centralized digital operations platform across multiple distinct CAM production zones to eliminate manual spreadsheets and heavy manual data entry.</li>
+                        <li>Built real-time queue monitoring dashboards tracking active work orders across operational states with instant status visibility for each CAM zone.</li>
+                        <li>Implemented detailed <strong>production analytics engines</strong> reporting total unit outputs by day, machine, and technician to evaluate operational throughput.</li>
+                        <li>Engineered a <strong>machine telemetry and uptime tracker</strong> measuring operational running time versus idle hours to maximize factory-floor equipment utilization.</li>
+                        <li>Designed comprehensive <strong>servicing and maintenance tracking modules</strong> managing automated 30-day calibration countdowns, preventative service logs, scheduled cleanings, and cutting tool lifespan tracking.</li>
+                        <li>Developed real-time <strong>material and inventory tracking</strong> to monitor raw stock, lot batches, and consumption across production zones without administrative bottlenecks.</li>
+                    </ul>
+                </div>
+
+                <div class="ent">
                     <div class="proj-name">MIS Production Tracking Tool</div>
                     <div class="proj-tech"><b>Tech Stack:</b> Python, Django, Microsoft SQL Server, OpenPyXL</div>
                     <ul class="bl">
@@ -477,21 +506,6 @@
                         <li>Eliminated manual data preparation and reporting, reducing processing time from
                             approximately <strong>360 hours to under 5 minutes</strong>, resulting in a 99.9% reduction
                             in manual effort.</li>
-                    </ul>
-                </div>
-
-                <div class="ent">
-                    <div class="proj-name">Intra-Oral Scan Automation &amp; Analysis System</div>
-                    <div class="proj-tech"><b>Tech Stack:</b> Python, Django, Selenium, Watchdog, Microsoft SQL Server,
-                        Waitress</div>
-                    <ul class="bl">
-                        <li>Designed and implemented an <strong>end-to-end automation system</strong> for downloading, organizing, processing, and analyzing intra-oral scan cases from a cloud-based platform.</li>
-                        <li>Implemented <strong>web scraping solutions</strong> using Selenium to extract case data from cloud platforms, converting scraped content into structured HTML files for downstream processing and analysis.</li>
-                        <li>Developed an <strong>intelligent folder management system</strong> that automatically creates and maintains a structured directory hierarchy for case registration and file management.</li>
-                        <li>Built data extraction modules to process <strong>PDF, JSON, and HTML</strong> files, transforming unstructured information into standardized records stored in Microsoft SQL Server.</li>
-                        <li>Developed a <strong>centralized Django application</strong> for displaying processed scan information, enabling faster case registration and improved operational visibility.</li>
-                        <li>Designed the workflow to seamlessly integrate automated downloads, web scraping, structured file organization, data extraction, and case registration into a <strong>single streamlined process</strong>.</li>
-                        <li>Reduced case registration time from <strong>15 minutes to under 3 minutes</strong> per scan, improving processing efficiency by approximately 80%.</li>
                     </ul>
                 </div>
             </div>

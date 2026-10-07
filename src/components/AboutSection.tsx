@@ -32,7 +32,7 @@ export const AboutSection: React.FC = () => {
   return (
     <section 
       id="about" 
-      className="relative w-screen bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black pt-16 lg:pt-20 pb-8 lg:pb-10 px-6 sm:px-12 lg:px-20 overflow-hidden flex items-center"
+      className="relative w-full bg-black text-[#D1FAE5] font-sans selection:bg-[#6EE7B7] selection:text-black pt-16 lg:pt-20 pb-8 lg:pb-10 px-4 sm:px-12 lg:px-20 overflow-hidden flex items-center"
     >
       {/* ================= BACKGROUND GLOWS & FLOATING PARTICLES ================= */}
       <motion.div 
@@ -85,7 +85,7 @@ export const AboutSection: React.FC = () => {
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#7DA88A] to-[#1E3A2F] drop-shadow-[0_4px_10px_rgba(0,0,0,0.85)]">
                   TURNING HOURS OF EFFORT
                 </span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#A7F3D0] via-[#34D399] to-[#064E3B] drop-shadow-[0_8px_25px_rgba(201,158,93,0.3)]">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#A7F3D0] via-[#34D399] to-[#064E3B] drop-shadow-[0_8px_25px_rgba(16,185,129,0.3)]">
                   INTO SECONDS OF EXECUTION.
                 </span>
               </h2>
@@ -314,11 +314,7 @@ export const AboutSection: React.FC = () => {
               </motion.div>
             </motion.div>
           </div>
-
-
-
         </div>
-
       </div>
     </section>
   );
